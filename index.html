@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Rochambeau | Rock-Paper-Scissors</title>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1,
+                maximum-scale = 1">
+    <meta name="Description" content="Rochambeau | Rock-Paper-Scissors" />
+    <meta name="Keywords" content="rochambeau, rock, paper, scissor,
+    javascipt, game, beginner" />
+    <meta name="Author" content="Ujjwal Bhardwaj" />
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="Rochambeau | Rock-Paper-Scissors" />
+    <meta property="og:type" content="non_profit" />
+    <meta property="og:url" content="http://apps.digihuntrex.com/rockpaperscissors" />
+    <meta property="og:site_name" content="Apps - Digihuntrex" />
+    <meta property="og:description" content="A begineer Javascript game of Rock-Paper-Scissor" />
+    <meta property="og:image" content="http://www.digihuntrex.com/img/favicon.png" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/main.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+</head>
+<body></head>
+<body>
+<!--    <div class="page-header">
+        <h1>Rock-Paper-Scissors</h1>
+    </div>-->
+    <div class="col-md-8 col-md-offset-2" id="canvas">
+        <h2 style="text-align: center">Player</h2>
+        <hr />
+        <div class = "row">
+            <div class="col-md-4">
+                <img src="img/stone2.png" alt="rock" class="player" id="rocks" onclick="rock()" />
+            </div>
+            <div class="col-md-4">
+                <img src="img/paper2.png" alt="paper" class="player" id="papers" onclick="paper()" />
+            </div>
+            <div class="col-md-4">
+                <img src="img/scissor2.png" alt="scissor" class="player" id="scissor" onclick="scissors()" />
+            </div>
+        </div>
+        <hr />
+        <div id = "cs">
+            ______________________
+        </div>
+        <hr />
+        <div class = "row">
+            <div class="col-md-4">
+                <img src="img/stone2.png" alt="stone" id = "crock" />
+            </div>
+            <div class="col-md-4">
+                <img src="img/paper2.png" alt="paper" id = "cpaper" />
+            </div>
+            <div class="col-md-4">
+                <img src="img/scissor2.png" alt="scissor" id = "cscissors" />
+            </div>
+        </div>
+        <hr />
+        <h2 style="text-align: center">Computer</h2>
+    </div>
+    <script>
+    var rock = function(){
+        userChoice = "rock";
+        computerChoose();
+        var x = document.getElementById("cs");
+        x.innerHTML = compare(userChoice, computerChoice) + "  <button class='btn btn-primary' onClick='replay()' >Play Again?</button>";
+        document.getElementById("rocks").style.backgroundColor = "#9896A4";
+        document.getElementById('rocks').style.visibility="hidden";
+        document.getElementById('papers').style.visibility="hidden";
+        document.getElementById('scissor').style.visibility="hidden";
+    };
+    var paper = function(){
+        userChoice = "paper";
+        computerChoose();
+        var x = document.getElementById("cs");
+        x.innerHTML = compare(userChoice, computerChoice) + "  <button class='btn btn-primary' onClick='replay()' >Play Again?</button>";
+        document.getElementById("papers").style.backgroundColor = "#9896A4";
+        document.getElementById('rocks').style.visibility="hidden";
+        document.getElementById('papers').style.visibility="hidden";
+        document.getElementById('scissor').style.visibility="hidden";
+    };
+    var scissors = function(){
+        userChoice = "scissors";
+        computerChoose();
+        var x = document.getElementById("cs");
+        x.innerHTML = compare(userChoice, computerChoice) + "  <button class='btn btn-primary' onClick='replay()' >Play Again?</button>";
+        document.getElementById("scissor").style.backgroundColor = "#9896A4";
+        document.getElementById('rocks').style.visibility="hidden";
+        document.getElementById('papers').style.visibility="hidden";
+        document.getElementById('scissor').style.visibility="hidden";
+    };
+    var computerChoose = function(){
+        computerChoice = Math.random();
+        if (computerChoice < 0.34)
+        {
+	       computerChoice = "rock";
+           document.getElementById("crock").style.backgroundColor = "#9896A4";
+        }
+        else if(computerChoice <= 0.67)
+        {
+	       computerChoice = "paper";
+           document.getElementById("cpaper").style.backgroundColor = "#9896A4";
+        }
+        else
+        {
+	       computerChoice = "scissors";
+           document.getElementById("cscissors").style.backgroundColor = "#9896A4";
+        }
+    };
+    var compare = function(choice1, choice2){
+        if(choice1 === choice2)
+        {
+            return "The result is a tie!";
+
+        }
+        else if(choice1 === "rock")
+        {
+            if(choice2 === "scissors")
+            {
+                return "You win!";
+            }
+            else
+            {
+                return "Computer wins!";
+            }
+        }
+        else if(choice1 === "paper")
+        {
+            if(choice2 === "rock")
+            {
+                return "You win!";
+            }
+            else
+            {
+                return "Computer wins!";
+            }
+        }
+        else if(choice1 === "scissors")
+        {
+            if(choice2 === "rock")
+            {
+                return "Computer wins!";
+            }
+            else
+            {
+                return "You win!";
+            }
+        }
+        else
+        {
+            return "Invalid input";
+        }
+    };
+    var replay = function(){
+        location.reload();
+    }
+    </script>
+    <script src="Scripts/jquery-2.1.4.min.js" />
+    <script src="Scripts/bootstrap.min.js" />
+</body>
+</html>

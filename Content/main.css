@@ -1,0 +1,28 @@
+body{
+    background-color: #8FA6C6;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.page-header{
+    color: white;
+}
+
+#canvas{
+    text-align: center;
+    font-size: 30px;
+}
+
+.player:hover{
+    background-color: #9896A4;
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    -webkit-transform: scale(1) rotate(-7deg);
+    opacity: 0.5;
+	filter:alpha(opacity=50);/*for IE8 and before*/
+    border-radius: 50%;
+}
+img{
+    border-radius: 50%;
+    width: 125px;
+}
